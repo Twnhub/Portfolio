@@ -1,0 +1,24 @@
+@import '../theme.scss';
+
+.bg-coffee {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../../coffee.jpg');
+}
+
+.bg-dark-transparent {
+	background-color: background-opacity(map-get($theme, "dark-2"), .8);
+}
+
+.bg-primary {
+	background-color: map-get($theme, "primary");
+}
+
+.bg-secondary {
+	background-color: map-get($theme, "secondary");
+}
+
+.bg-white {
+	background-color: map-get($theme, "white");
+}

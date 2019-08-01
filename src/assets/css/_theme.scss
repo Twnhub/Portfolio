@@ -1,0 +1,29 @@
+@function background-opacity($color, $opacity) {
+	@return rgba($color, $opacity);
+}
+
+$theme: (
+	"primary": #375E97,
+	"off-primary": #1995AD,
+	"secondary": #FB6542,
+	"accent": #FFBB00,
+	"dark-1": #3F681C,
+	"dark-2": #333333,
+	"white": #F7F8F3,
+);
+
+.bg-primary {
+	background-color: map-get($theme, "primary");
+}
+
+.bg-secondary {
+	background-color: map-get($theme, "secondary");
+}
+
+.bg-accent {
+	background-color: map-get($theme, "accent");
+}
+
+.bg-dark {
+	background-color: map-get($theme, "");
+}

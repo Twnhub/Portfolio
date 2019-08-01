@@ -1,0 +1,26 @@
+@import '../theme';
+
+.carousel {
+	margin: 0;
+	padding: 1em;
+	height: 100%;
+	width: 100%;
+	background: map-get($theme, "dark-2");
+
+	.carousel-activator {
+
+	}
+	.carousel-controls {
+		.carousel-control {
+
+		}
+	}
+	.carousel-slide {
+
+	}
+	.carousel-indicators {
+		.carousel-indicator {
+
+		}
+	}
+}

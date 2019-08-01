@@ -1,0 +1,163 @@
+@import '../_theme.scss';
+@import '../_navigationSettings.scss';
+@import '../layoutSettings';
+@import '../animations';
+
+.nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	z-index: 999;
+	background: map-get($theme, "white");
+	animation: slide-in-left 1s ease-in-out;
+
+	i {
+		padding: 1em;	
+	}
+
+	.nav-items-container {
+		position: absolute;
+		left: -100%;
+		transition: left .3s ease-in-out;
+		z-index: 1000;
+		width: 100%;
+		background-color: background-opacity(map-get($theme, "primary"), .9);
+		border-radius: 0 0 15px 0;
+
+		.nav-items {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+
+			$nav-item-transition-time: .4s;
+			$nav-item-transition-curve: cubic-bezier(0.175, 0.75, 0.32, 2);
+
+			.nav-item {
+				flex: 1 1 auto;
+				width: 100%;
+				text-align: center;
+				position: relative;
+				
+				.nav-link {
+					font-size: map-get($navOptions, "itemFontSize");
+					transition: scale, font-size $nav-item-transition-time $nav-item-transition-curve, color .2s linear;
+					color: map-get($theme, "white");
+					text-decoration: none;
+					position: relative;
+					padding: map-get($navOptions, "itemPadding");
+					width: 100%;
+					height: 100%;
+					display: block;
+					background: transparent;
+				}
+			}
+		}
+	}
+	.nav-btn {
+		color: map-get($theme, "secondary");
+		position: absolute;
+		right: 1px;
+		top: 1px;
+		font-size: map-get($navOptions, "btnFontSize");
+		border-color: transparent;
+	}
+
+	.nav-close-outer {
+		width: 100%;
+	}
+
+	.nav-close {
+		width: 100%;
+		position: relative;
+		i {
+			font-size: 24px;
+			float: right;
+			color: map-get($theme, secondary);
+		}
+	}
+	
+	/* touch screen device? */
+	@media (-moz-touch-enabled: 1), (pointer:coarse) {
+		.nav-items {
+			.nav-item {
+				.nav-link:active {
+					font-size: map-get($navOptions, "itemFontSizeActive");
+					color: map-get($theme, "accent");
+					background: map-get($theme, "white");
+					border: map-get($theme, "accent") solid 1px;
+				}
+			}
+		}
+
+		i:active {
+			color: map-get($theme, accent);
+		}
+	}
+
+	/* mouse pointer ?? */
+	@media (-moz-touch-enabled: 0), (pointer:fine) {
+		.nav-items {
+			.nav-item {
+				.nav-link:hover {
+					cursor: pointer;
+					font-size: map-get($navOptions, "itemFontSizeActive");
+					color: map-get($theme, "accent");
+					background: map-get($theme, "white");
+					border: map-get($theme, "accent") solid 1px;
+				}
+			}
+		}
+
+		i:hover {
+			cursor: pointer;
+			color: map-get($theme, accent);
+		}
+	}
+	
+	@media screen and (min-width: $minWidthBreakpoint1) {
+		.nav-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			background: transparent;
+		}
+
+		.nav-btn {
+			display: none;
+		}
+
+		.nav-close {
+			display: none;
+		}
+
+		.nav-items-container {
+			position: relative;
+			left: 0;
+			width: 100%;
+			top: 0;
+			border-radius: 0;
+			background: transparent;
+			flex: 1 1 75%;
+
+			.nav-items {
+				background: rgba(map-get($theme, "primary"), .8);	
+				.nav-item {
+					flex: 0 0 auto;
+					width: 33.33%;
+					.nav-link {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
