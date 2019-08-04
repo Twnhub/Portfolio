@@ -1,4 +1,98 @@
+@import '../theme';
+$projectMargin: 1%;
+
 .project-section {
 	position: relative;
-	top: 50px;
+	transition: all 1s cubic-bezier(.25, .5, .8, 1.5);
+	transition-property: top;
+}
+
+#projects-container {
+	padding: 1em;
+}
+
+.project {
+	flex: 1 1 auto;
+	width: 100%;
+	margin: $projectMargin;
+	box-shadow: 1px 1px 10px 1px map-get($theme, "dark-2");
+	border-radius: 2%;
+}
+
+.project-title {
+	text-align: center;
+	width: 100%;
+	color: map-get($theme, "accent");
+}
+
+.project-preview {
+	width: 100%;
+}
+
+.project-description {
+	width: 100%;
+	text-align: center;
+}
+
+.framework-list-container {
+	width: 100%;
+	color: map-get($theme, "dark-2");
+}
+
+.framework-list-heading {
+	text-align: center;
+	width: 100%;
+	border-bottom: rgba(map-get($theme, "dark-2"), .2) .25px solid;
+}
+
+.frameworks-list {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+}
+
+.framework-list-item {
+	flex: 1 1 auto;
+	width: 100%;
+	display: inline-block;
+	list-style: none;
+}
+
+.framework-link {
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+}
+
+@media screen and (pointer:fine), (-moz-touch-enabled: 0) {
+
+} 
+
+@media screen and (pointer:coarse), (-moz-touch-enabled: 1) {
+
+}
+
+@media screen and (min-width: 1000px) {
+	.project-section {
+		top: 50px;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.project-section {
+		top: 100px;
+	}
+}
+
+@media screen and (min-width: 1250px) {
+	.project-section {
+		top: 125px;
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.project {
+		width: calc(50% - (#{$projectMargin} * 2));
+	}
 }
