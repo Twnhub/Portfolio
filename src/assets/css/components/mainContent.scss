@@ -62,8 +62,13 @@
 
 .link-container {
 	width: 50%;
-	margin: auto;
 	height: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
 }
 
 $linkBtnFontSizeMobileSmall: 24px;
@@ -71,14 +76,17 @@ $linkBtnFontSizeMobileMedium: 30px;
 $linkBtnFontSizeDesktop: 40px;
 
 .link-btn {
-	display: block;
+	display: inline-block;
+	flex: 1 1 auto;
 	font-size: $linkBtnFontSizeMobileSmall;
 	color: map-get($theme, "secondary");
-	padding: 1em;
 	transition: all .25s cubic-bezier(0.15, .3, 0.75, 2);
 	transition-property: color, transform;
-	width: 33.33%;
-	text-align: center;
+	width: 33.33%;	
+	max-height: 90px;
+	i {
+		padding: 1em;
+	}
 }
 
 @media (-moz-touch-enabled: 1), (pointer:coarse) {
