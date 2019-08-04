@@ -56,7 +56,7 @@ const styleLoader = {
 };
 
 const fileLoader = {
-	test: /\.(jpg|png|gif)$/,
+	test: /\.(jpg|png|gif|json)$/,
 	exclude: /(node_modules)/,
 	use: {
 		loader: 'file-loader',

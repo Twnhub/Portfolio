@@ -8,6 +8,7 @@ import './assets/photos_of_me/20190730_112059.jpg';
 
 import Navigation from './Navigation';
 import ContentManager from './ContentManager';
+import ProjectManager from './ProjectManager';
 
 window.addEventListener('load', (e) => {
 	let navHandler = new Navigation({
@@ -41,6 +42,8 @@ window.addEventListener('load', (e) => {
 		startingAnimations: ['slide-in-left-fade-in', 'slide-in-right-fade-in'],
 		animationClasses: ['slide-in-left-fade-in', 'slide-in-right-fade-in', 'slide-in-top', 'grow-to-scale', 'fade-in']
 	});
+
+	let projManager = new ProjectManager();
 
 	navHandler.on('nav-link-clicked', (name) => {
 		contentManager.setDescriptionContent(name);

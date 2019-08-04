@@ -1,0 +1,9 @@
+{
+	"name": "directory-loader",
+	"jest": {
+		"verbose": true,
+		"transform": {
+			"^.+\\.js?$": "babel-jest"
+		}
+	}
+}
