@@ -1,5 +1,7 @@
 import './assets/css/components/projectManager.scss';
 import './assets/project_previews/game_of_life.gif';
+import './ProjectViewModel';
+import ProjectViewModel from './ProjectViewModel';
 
 let getProjects = function(url) {
 	return new Promise((resolve, reject) => {
@@ -21,7 +23,7 @@ let getProjects = function(url) {
 }
 
 class ProjectManager {
-	constructor(options) {
+	constructor(options, cb) {
 		options = Object.assign({
 			config: 'project_previews/projects.json'
 		}, options);
@@ -30,13 +32,23 @@ class ProjectManager {
 
 		getProjects(this.configLoc)
 			.then((obj) => {
-				this.projects = obj;
+				this.projects = obj.projects.map((proj) => {
+					return new ProjectViewModel(proj);
+				});
 				console.log(this.projects);
+				cb();
 			})
 			.catch((err) => {
 				console.error(err);
 			});
-	}	
+	}
+	
+	render() {
+		let projectTree = this.projects.reduce((acc, projVM) => {
+			return acc.toString() + projVM.render().toString();
+		});
+		return projectTree;
+	}
 }
 
 export default ProjectManager;

@@ -11,6 +11,9 @@ import ContentManager from './ContentManager';
 import ProjectManager from './ProjectManager';
 
 window.addEventListener('load', (e) => {
+
+	let projectsContainer = document.querySelector('#projects-container');
+
 	let navHandler = new Navigation({
 		// This has to be the same value as the media query value in navigation.scss
 		// TODO: Handle this better somehow
@@ -43,7 +46,9 @@ window.addEventListener('load', (e) => {
 		animationClasses: ['slide-in-left-fade-in', 'slide-in-right-fade-in', 'slide-in-top', 'grow-to-scale', 'fade-in']
 	});
 
-	let projManager = new ProjectManager();
+	let projManager = new ProjectManager({}, () => {
+		projectsContainer.innerHTML = projManager.render();
+	});
 
 	navHandler.on('nav-link-clicked', (name) => {
 		contentManager.setDescriptionContent(name);
