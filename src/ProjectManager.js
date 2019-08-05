@@ -47,7 +47,11 @@ class ProjectManager {
 		let projectTree = this.projects.map((el) => {
 			return el.render();
 		});
-		return projectTree;
+		let projFrag = document.createDocumentFragment();
+		projectTree.forEach((el) => {
+			projFrag.appendChild(el);
+		});
+		return projFrag;
 	}
 }
 
