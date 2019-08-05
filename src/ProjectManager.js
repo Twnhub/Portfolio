@@ -44,8 +44,8 @@ class ProjectManager {
 	}
 	
 	render() {
-		let projectTree = this.projects.reduce((acc, projVM) => {
-			return acc.toString() + projVM.render().toString();
+		let projectTree = this.projects.map((el) => {
+			return el.render();
 		});
 		return projectTree;
 	}

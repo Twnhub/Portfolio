@@ -37,23 +37,21 @@ export default class ProjectViewModel {
 		
 		let frameworkContainer = document.createElement('div');
 		frameworkContainer.classList.add('framework-list-container');
-		
+		let frameworkHeading = document.createElement('h3');
+		frameworkHeading.classList.add('framework-list-heading');
+		frameworkHeading.textContent = 'Frameworks I used';
+		let frameworkList = document.createElement('ul');
+		frameworksItems.forEach((li) => {
+			frameworkList.appendChild(li);
+		});
+		frameworkContainer.appendChild(frameworkHeading)
+											.appendChild(frameworkList);
 
-		return `
-			<div class="project">
-				<h2 class="project-title">${this.title}</h2>
-				<img class="project-preview" src="${this.preview}" alt="${this.title}">
-				<p class="project-description">
-					${this.description}</br>
-					View the source code <a href="${this.src_link}" target="_blank">here</a>.
-				</p>
-				<div class="framework-list-container">
-					<h3 class="framework-list-heading">Frameworks I Used</h3>
-					<ul class="frameworks-list">
-						${frameworksItems}
-					</ul>
-				</div>
-			</div>
-		`;
+		project.appendChild(title)	
+						.appendChild(prevw)
+						.appendChild(desc)
+						.appendChild(frameworkContainer);
+
+		return project;
 	}
 }

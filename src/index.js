@@ -47,7 +47,7 @@ window.addEventListener('load', (e) => {
 	});
 
 	let projManager = new ProjectManager({}, () => {
-		projectsContainer.innerHTML = projManager.render();
+		projectsContainer.appendChild(projManager.render());
 	});
 
 	navHandler.on('nav-link-clicked', (name) => {
