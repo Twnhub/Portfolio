@@ -28,6 +28,7 @@ export default class ProjectViewModel {
 		title.classList.add('project-title');
 		title.textContent = this.title;
 		let prevw = document.createElement('img');
+		prevw.classList.add('project-preview');
 		prevw.src = this.preview;
 		prevw.alt = this.title;
 		let desc = document.createElement('p');
@@ -44,13 +45,13 @@ export default class ProjectViewModel {
 		frameworksItems.forEach((li) => {
 			frameworkList.appendChild(li);
 		});
-		frameworkContainer.appendChild(frameworkHeading)
-											.appendChild(frameworkList);
+		frameworkContainer.appendChild(frameworkHeading);
+		frameworkContainer.appendChild(frameworkList);
 
-		project.appendChild(title)	
-						.appendChild(prevw)
-						.appendChild(desc)
-						.appendChild(frameworkContainer);
+		project.appendChild(title);
+		project.appendChild(prevw);
+		project.appendChild(desc);
+		project.appendChild(frameworkContainer);
 
 		return project;
 	}
