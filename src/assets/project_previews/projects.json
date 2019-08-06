@@ -1,0 +1,16 @@
+{
+	"projects": [
+		{
+			"title": "Game Of Life",
+			"description": "This is a version of John Conway's Game Of Life simulation that I coded a while back.  It was a lot of fun",
+			"preview": "project_previews/game_of_life.gif",
+			"src_link": "https://github.com/MachineMitch21/GameOfLife/tree/master/TheGameOfLife",
+			"frameworks": [
+				{
+					"name": "p5js",
+					"link": "https://p5js.org/"
+				}
+			]
+		}
+	]
+}
