@@ -25,7 +25,7 @@ const options = {
 			chunkFilename: '[id].css'
 		}),
 		new CopyWebpackPlugin([
-			{ from: 'src/assets/project_previews/project.json', to: 'dist/project_previews/project.json' }
+			{ from: 'src/assets/project_previews/projects.json', to: 'dist/project_previews/projects.json' }
 		])
 	],
 	externals: [
