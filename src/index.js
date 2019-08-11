@@ -3,8 +3,6 @@ import './assets/css/base/backgrounds.scss';
 import './assets/css/components/carousel.scss';
 import './assets/css/components/navigation.scss';
 import './assets/css/components/mainContent.scss';
-import './assets/coffee.jpg';
-import './assets/photos_of_me/20190730_112059.jpg';
 
 import Navigation from './Navigation';
 import ContentManager from './ContentManager';

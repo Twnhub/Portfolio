@@ -17,6 +17,7 @@ $projectMargin: 1%;
 	margin: $projectMargin;
 	box-shadow: 1px 1px 10px 1px map-get($theme, "dark-2");
 	border-radius: 2%;
+	padding: 1em;
 }
 
 .project-title {

@@ -1,5 +1,6 @@
 import './assets/css/components/projectManager.scss';
 import './assets/project_previews/game_of_life.gif';
+import './assets/project_previews/fun_with_physics.gif';
 import './ProjectViewModel';
 import ProjectViewModel from './ProjectViewModel';
 
@@ -35,7 +36,6 @@ class ProjectManager {
 				this.projects = obj.projects.map((proj) => {
 					return new ProjectViewModel(proj);
 				});
-				console.log(this.projects);
 				cb();
 			})
 			.catch((err) => {
