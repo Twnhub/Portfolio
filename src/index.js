@@ -3,6 +3,7 @@ import './assets/css/base/backgrounds.scss';
 import './assets/css/components/carousel.scss';
 import './assets/css/components/navigation.scss';
 import './assets/css/components/mainContent.scss';
+import './assets/css/components/footer.scss';
 
 import Navigation from './Navigation';
 import ContentManager from './ContentManager';

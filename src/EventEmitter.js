@@ -1,6 +1,8 @@
 export default class EventEmitter {
 	constructor() {
 		this._listeners = {
+			// Hold the listeners that are only to be called once,
+			// then removed from the _listeners._once object
 			_once: {}
 		};
 	}
