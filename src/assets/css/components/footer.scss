@@ -1,13 +1,17 @@
 @import '../theme';
 
 footer {
+	position: relative;
+	top: 150px;
 	width: 100%;
 	background: map-get($theme, "primary");
 	padding: 1em;
+	margin: 0;
 }
 
 .copyright-msg {
 	width: 100%;
 	padding: 1em;
+	margin: 0;
 	text-align: center;
 }
